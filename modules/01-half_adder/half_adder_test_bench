@@ -1,0 +1,104 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000024edd565350 .scope module, "half_adder_test_bench" "half_adder_test_bench" 2 2;
+ .timescale -9 -12;
+v0000024edd5738b0_0 .var "d", 0 0;
+v0000024edd5731d0_0 .var "e", 0 0;
+v0000024edd5734f0_0 .net "f1", 0 0, L_0000024edd57b780;  1 drivers
+v0000024edd573630_0 .net "f2", 0 0, L_0000024edd5435a0;  1 drivers
+v0000024edd572ff0_0 .net "f3", 0 0, L_0000024edd5c8380;  1 drivers
+v0000024edd573950_0 .net "g1", 0 0, L_0000024edd5433b0;  1 drivers
+v0000024edd573b30_0 .net "g2", 0 0, L_0000024edd5c8620;  1 drivers
+v0000024edd573bd0_0 .net "g3", 0 0, L_0000024edd5c8460;  1 drivers
+S_0000024edd56a920 .scope module, "half_adder_behav" "half_adder_behavioral" 2 12, 3 2 0, S_0000024edd565350;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "c";
+L_0000024edd57b780 .functor XOR 1, v0000024edd5738b0_0, v0000024edd5731d0_0, C4<0>, C4<0>;
+L_0000024edd5433b0 .functor AND 1, v0000024edd5738b0_0, v0000024edd5731d0_0, C4<1>, C4<1>;
+v0000024edd56aab0_0 .net "a", 0 0, v0000024edd5738b0_0;  1 drivers
+v0000024edd56ab50_0 .net "b", 0 0, v0000024edd5731d0_0;  1 drivers
+v0000024edd565800_0 .net "c", 0 0, L_0000024edd5433b0;  alias, 1 drivers
+v0000024edd5658a0_0 .net "s", 0 0, L_0000024edd57b780;  alias, 1 drivers
+S_0000024edd57aa20 .scope module, "half_adder_data" "half_adder_dataflow" 2 15, 4 2 0, S_0000024edd565350;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "c";
+L_0000024edd5435a0 .functor XOR 1, v0000024edd5738b0_0, v0000024edd5731d0_0, C4<0>, C4<0>;
+L_0000024edd5c8620 .functor AND 1, v0000024edd5738b0_0, v0000024edd5731d0_0, C4<1>, C4<1>;
+v0000024edd5683a0_0 .net "a", 0 0, v0000024edd5738b0_0;  alias, 1 drivers
+v0000024edd568440_0 .net "b", 0 0, v0000024edd5731d0_0;  alias, 1 drivers
+v0000024edd57abb0_0 .net "c", 0 0, L_0000024edd5c8620;  alias, 1 drivers
+v0000024edd57ac50_0 .net "s", 0 0, L_0000024edd5435a0;  alias, 1 drivers
+S_0000024edd57acf0 .scope module, "half_adder_struct" "half_adder_structural" 2 18, 5 2 0, S_0000024edd565350;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "c";
+L_0000024edd5c8380 .functor XOR 1, v0000024edd5738b0_0, v0000024edd5731d0_0, C4<0>, C4<0>;
+L_0000024edd5c8460 .functor AND 1, v0000024edd5738b0_0, v0000024edd5731d0_0, C4<1>, C4<1>;
+v0000024edd57a280_0 .net "a", 0 0, v0000024edd5738b0_0;  alias, 1 drivers
+v0000024edd57a320_0 .net "b", 0 0, v0000024edd5731d0_0;  alias, 1 drivers
+v0000024edd57a3c0_0 .net "c", 0 0, L_0000024edd5c8460;  alias, 1 drivers
+v0000024edd573450_0 .net "s", 0 0, L_0000024edd5c8380;  alias, 1 drivers
+    .scope S_0000024edd565350;
+T_0 ;
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000001, S_0000024edd565350 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024edd5738b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024edd5731d0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 27 "$display", "Test case 1:" {0 0 0};
+    %vpi_call 2 28 "$display", "Behavioral - s=%b, c=%b", v0000024edd5734f0_0, v0000024edd573950_0 {0 0 0};
+    %vpi_call 2 29 "$display", "Dataflow - s=%b, c=%b", v0000024edd573630_0, v0000024edd573b30_0 {0 0 0};
+    %vpi_call 2 30 "$display", "Structural - s=%b, c=%b", v0000024edd572ff0_0, v0000024edd573bd0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024edd5738b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024edd5731d0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 35 "$display", "Test case 2:" {0 0 0};
+    %vpi_call 2 36 "$display", "Behavioral - s=%b, c=%b", v0000024edd5734f0_0, v0000024edd573950_0 {0 0 0};
+    %vpi_call 2 37 "$display", "Dataflow - s=%b, c=%b", v0000024edd573630_0, v0000024edd573b30_0 {0 0 0};
+    %vpi_call 2 38 "$display", "Structural - s=%b, c=%b", v0000024edd572ff0_0, v0000024edd573bd0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024edd5738b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024edd5731d0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 43 "$display", "Test case 3:" {0 0 0};
+    %vpi_call 2 44 "$display", "Behavioral - s=%b, c=%b", v0000024edd5734f0_0, v0000024edd573950_0 {0 0 0};
+    %vpi_call 2 45 "$display", "Dataflow - s=%b, c=%b", v0000024edd573630_0, v0000024edd573b30_0 {0 0 0};
+    %vpi_call 2 46 "$display", "Structural - s=%b, c=%b", v0000024edd572ff0_0, v0000024edd573bd0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024edd5738b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024edd5731d0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 51 "$display", "Test case 4:" {0 0 0};
+    %vpi_call 2 52 "$display", "Behavioral - s=%b, c=%b", v0000024edd5734f0_0, v0000024edd573950_0 {0 0 0};
+    %vpi_call 2 53 "$display", "Dataflow - s=%b, c=%b", v0000024edd573630_0, v0000024edd573b30_0 {0 0 0};
+    %vpi_call 2 54 "$display", "Structural - s=%b, c=%b", v0000024edd572ff0_0, v0000024edd573bd0_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "half_adder_test_bench.v";
+    "half_adder_behavioral.v";
+    "half_adder_dataflow.v";
+    "half_adder_structural.v";

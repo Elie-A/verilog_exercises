@@ -1,0 +1,118 @@
+$date
+	Sat Jun 22 14:37:00 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module test_bench $end
+$var wire 1 ! cout $end
+$var wire 1 " sum $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % cin $end
+$scope module dut_behavioral $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % cin $end
+$var wire 1 ! cout $end
+$var wire 1 " sum $end
+$var wire 1 & ha2_carry $end
+$var wire 1 ' ha1_sum $end
+$var wire 1 ( ha1_carry $end
+$scope module ha1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 ( carry $end
+$var wire 1 ' sum $end
+$upscope $end
+$scope module ha2 $end
+$var wire 1 ' a $end
+$var wire 1 % b $end
+$var wire 1 & carry $end
+$var wire 1 " sum $end
+$upscope $end
+$upscope $end
+$scope module dut_dataflow $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % cin $end
+$var wire 1 ! cout $end
+$var wire 1 " sum $end
+$var wire 1 ) s1 $end
+$var wire 1 * c2 $end
+$var wire 1 + c1 $end
+$upscope $end
+$scope module dut_structural $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % cin $end
+$var wire 1 ! cout $end
+$var wire 1 " sum $end
+$var wire 1 , h2_carry $end
+$var wire 1 - h1_sum $end
+$var wire 1 . h1_carry $end
+$scope module ha1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 . carry $end
+$var wire 1 - sum $end
+$upscope $end
+$scope module ha2 $end
+$var wire 1 - a $end
+$var wire 1 % b $end
+$var wire 1 , carry $end
+$var wire 1 " sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1.
+0-
+0,
+1+
+0*
+0)
+1(
+0'
+0&
+0%
+1$
+1#
+0"
+1!
+$end
+#10000
+1*
+1!
+1&
+1,
+1'
+0(
+1)
+0+
+1-
+0.
+1%
+0$
+#20000
+1$
+0#
+#30000
+0!
+0&
+0*
+0,
+0'
+0)
+0-
+0%
+0$
+#40000

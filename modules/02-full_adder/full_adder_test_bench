@@ -1,0 +1,189 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000235890a29e0 .scope module, "full_adder_test_bench" "full_adder_test_bench" 2 2;
+ .timescale -9 -12;
+v0000023589111420_0 .var "a", 0 0;
+v0000023589111ce0_0 .var "b", 0 0;
+v0000023589111c40_0 .var "cin", 0 0;
+v0000023589112be0_0 .net "cout1", 0 0, L_0000023589113c70;  1 drivers
+v0000023589112140_0 .net "cout2", 0 0, L_0000023589113570;  1 drivers
+v00000235891123c0_0 .net "cout3", 0 0, L_0000023589113d50;  1 drivers
+v00000235891114c0_0 .net "s1", 0 0, L_00000235890982c0;  1 drivers
+v0000023589111740_0 .net "s2", 0 0, L_0000023589113340;  1 drivers
+v0000023589112320_0 .net "s3", 0 0, L_0000023589113a40;  1 drivers
+S_00000235890a3f00 .scope module, "fa_behav" "full_adder_behavioral" 2 11, 3 2 0, S_00000235890a29e0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000023589098250 .functor XOR 1, v0000023589111420_0, v0000023589111ce0_0, C4<0>, C4<0>;
+L_00000235890982c0 .functor XOR 1, L_0000023589098250, v0000023589111c40_0, C4<0>, C4<0>;
+L_0000023589097bc0 .functor AND 1, v0000023589111420_0, v0000023589111ce0_0, C4<1>, C4<1>;
+L_0000023589113f10 .functor AND 1, v0000023589111ce0_0, v0000023589111c40_0, C4<1>, C4<1>;
+L_0000023589113ab0 .functor OR 1, L_0000023589097bc0, L_0000023589113f10, C4<0>, C4<0>;
+L_0000023589113810 .functor AND 1, v0000023589111c40_0, v0000023589111420_0, C4<1>, C4<1>;
+L_0000023589113c70 .functor OR 1, L_0000023589113ab0, L_0000023589113810, C4<0>, C4<0>;
+v0000023589099800_0 .net *"_ivl_0", 0 0, L_0000023589098250;  1 drivers
+v0000023589099f80_0 .net *"_ivl_10", 0 0, L_0000023589113810;  1 drivers
+v000002358909a0c0_0 .net *"_ivl_4", 0 0, L_0000023589097bc0;  1 drivers
+v000002358909a020_0 .net *"_ivl_6", 0 0, L_0000023589113f10;  1 drivers
+v0000023589099e40_0 .net *"_ivl_8", 0 0, L_0000023589113ab0;  1 drivers
+v000002358909a160_0 .net "a", 0 0, v0000023589111420_0;  1 drivers
+v000002358909a3e0_0 .net "b", 0 0, v0000023589111ce0_0;  1 drivers
+v000002358909a5c0_0 .net "cin", 0 0, v0000023589111c40_0;  1 drivers
+v0000023589099760_0 .net "cout", 0 0, L_0000023589113c70;  alias, 1 drivers
+v000002358909a200_0 .net "s", 0 0, L_00000235890982c0;  alias, 1 drivers
+S_00000235890a4090 .scope module, "fa_data" "full_adder_dataflow" 2 14, 4 2 0, S_00000235890a29e0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000023589113880 .functor XOR 1, v0000023589111420_0, v0000023589111ce0_0, C4<0>, C4<0>;
+L_0000023589113340 .functor XOR 1, L_0000023589113880, v0000023589111c40_0, C4<0>, C4<0>;
+L_0000023589113730 .functor AND 1, v0000023589111420_0, v0000023589111ce0_0, C4<1>, C4<1>;
+L_0000023589113260 .functor AND 1, v0000023589111ce0_0, v0000023589111c40_0, C4<1>, C4<1>;
+L_0000023589113960 .functor OR 1, L_0000023589113730, L_0000023589113260, C4<0>, C4<0>;
+L_0000023589113f80 .functor AND 1, v0000023589111c40_0, v0000023589111420_0, C4<1>, C4<1>;
+L_0000023589113570 .functor OR 1, L_0000023589113960, L_0000023589113f80, C4<0>, C4<0>;
+v00000235890998a0_0 .net *"_ivl_0", 0 0, L_0000023589113880;  1 drivers
+v000002358909a2a0_0 .net *"_ivl_10", 0 0, L_0000023589113f80;  1 drivers
+v0000023589099bc0_0 .net *"_ivl_4", 0 0, L_0000023589113730;  1 drivers
+v0000023589099940_0 .net *"_ivl_6", 0 0, L_0000023589113260;  1 drivers
+v000002358909a480_0 .net *"_ivl_8", 0 0, L_0000023589113960;  1 drivers
+v000002358909a340_0 .net "a", 0 0, v0000023589111420_0;  alias, 1 drivers
+v0000023589099b20_0 .net "b", 0 0, v0000023589111ce0_0;  alias, 1 drivers
+v00000235890996c0_0 .net "cin", 0 0, v0000023589111c40_0;  alias, 1 drivers
+v00000235890999e0_0 .net "cout", 0 0, L_0000023589113570;  alias, 1 drivers
+v0000023589099a80_0 .net "s", 0 0, L_0000023589113340;  alias, 1 drivers
+S_00000235890b1540 .scope module, "fa_struct" "full_adder_structural" 2 17, 5 2 0, S_00000235890a29e0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000023589113ea0 .functor XOR 1, v0000023589111420_0, v0000023589111ce0_0, C4<0>, C4<0>;
+L_0000023589113a40 .functor XOR 1, L_0000023589113ea0, v0000023589111c40_0, C4<0>, C4<0>;
+L_00000235891136c0 .functor AND 1, L_0000023589113ea0, v0000023589111c40_0, C4<1>, C4<1>;
+L_0000023589113c00 .functor AND 1, v0000023589111420_0, v0000023589111ce0_0, C4<1>, C4<1>;
+L_0000023589113d50 .functor OR 1, L_00000235891136c0, L_0000023589113c00, C4<0>, C4<0>;
+v0000023589099d00_0 .net "a", 0 0, v0000023589111420_0;  alias, 1 drivers
+v0000023589099da0_0 .net "b", 0 0, v0000023589111ce0_0;  alias, 1 drivers
+v0000023589099ee0_0 .net "c1", 0 0, L_00000235891136c0;  1 drivers
+v0000023589111ba0_0 .net "c2", 0 0, L_0000023589113c00;  1 drivers
+v0000023589112a00_0 .net "cin", 0 0, v0000023589111c40_0;  alias, 1 drivers
+v0000023589112500_0 .net "cout", 0 0, L_0000023589113d50;  alias, 1 drivers
+v00000235891125a0_0 .net "s", 0 0, L_0000023589113a40;  alias, 1 drivers
+v0000023589111380_0 .net "sum1", 0 0, L_0000023589113ea0;  1 drivers
+    .scope S_00000235890a29e0;
+T_0 ;
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000001, S_00000235890a29e0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 26 "$display", "Test case 1:" {0 0 0};
+    %vpi_call 2 27 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 28 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 29 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 34 "$display", "Test case 2:" {0 0 0};
+    %vpi_call 2 35 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 36 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 37 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 42 "$display", "Test case 3:" {0 0 0};
+    %vpi_call 2 43 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 44 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 45 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 50 "$display", "Test case 4:" {0 0 0};
+    %vpi_call 2 51 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 52 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 53 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 58 "$display", "Test case 5:" {0 0 0};
+    %vpi_call 2 59 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 60 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 61 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 66 "$display", "Test case 6:" {0 0 0};
+    %vpi_call 2 67 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 68 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 69 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 74 "$display", "Test case 7:" {0 0 0};
+    %vpi_call 2 75 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 76 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 77 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111420_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111ce0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023589111c40_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 82 "$display", "Test case 8:" {0 0 0};
+    %vpi_call 2 83 "$display", "Behavioral - s=%b, cout=%b", v00000235891114c0_0, v0000023589112be0_0 {0 0 0};
+    %vpi_call 2 84 "$display", "Dataflow - s=%b, cout=%b", v0000023589111740_0, v0000023589112140_0 {0 0 0};
+    %vpi_call 2 85 "$display", "Structural - s=%b, cout=%b", v0000023589112320_0, v00000235891123c0_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "full_adder_test_bench.v";
+    "full_adder_behavioral.v";
+    "full_adder_dataflow.v";
+    "full_adder_structural.v";

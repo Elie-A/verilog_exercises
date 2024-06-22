@@ -1,0 +1,214 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001272f103a40 .scope module, "full_subtractor_test_bench" "full_subtractor_test_bench" 2 2;
+ .timescale -9 -12;
+v000001272f171b00_0 .var "a", 0 0;
+v000001272f1719c0_0 .var "b", 0 0;
+v000001272f171740_0 .net "b1", 0 0, v000001272f0fbfc0_0;  1 drivers
+v000001272f172dc0_0 .net "b2", 0 0, L_000001272f174320;  1 drivers
+v000001272f172500_0 .net "b3", 0 0, L_000001272f173e50;  1 drivers
+v000001272f172280_0 .var "bin", 0 0;
+v000001272f1728c0_0 .net "d1", 0 0, v000001272f0fbd40_0;  1 drivers
+v000001272f172a00_0 .net "d2", 0 0, L_000001272f0fa300;  1 drivers
+v000001272f1717e0_0 .net "d3", 0 0, L_000001272f173750;  1 drivers
+S_000001272f117b10 .scope module, "fs_behav" "full_subtractor_behavioral" 2 12, 3 2 0, S_000001272f103a40;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "bin";
+    .port_info 3 /OUTPUT 1 "diff";
+    .port_info 4 /OUTPUT 1 "bout";
+v000001272f0fb660_0 .net "a", 0 0, v000001272f171b00_0;  1 drivers
+v000001272f0fb7a0_0 .net "b", 0 0, v000001272f1719c0_0;  1 drivers
+v000001272f0fb520_0 .net "bin", 0 0, v000001272f172280_0;  1 drivers
+v000001272f0fbfc0_0 .var "bout", 0 0;
+v000001272f0fbd40_0 .var "diff", 0 0;
+E_000001272f0fffc0 .event anyedge, v000001272f0fb660_0, v000001272f0fb7a0_0, v000001272f0fb520_0;
+S_000001272f117ca0 .scope module, "fs_data" "full_subtractor_dataflow" 2 15, 4 2 0, S_000001272f103a40;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "bin";
+    .port_info 3 /OUTPUT 1 "diff";
+    .port_info 4 /OUTPUT 1 "bout";
+L_000001272f0f9ea0 .functor XOR 1, v000001272f171b00_0, v000001272f1719c0_0, C4<0>, C4<0>;
+L_000001272f0fa300 .functor XOR 1, L_000001272f0f9ea0, v000001272f172280_0, C4<0>, C4<0>;
+L_000001272f0fa0d0 .functor NOT 1, v000001272f171b00_0, C4<0>, C4<0>, C4<0>;
+L_000001272f0f9f80 .functor AND 1, L_000001272f0fa0d0, v000001272f1719c0_0, C4<1>, C4<1>;
+L_000001272f0fa140 .functor NOT 1, v000001272f171b00_0, C4<0>, C4<0>, C4<0>;
+L_000001272f0fa290 .functor AND 1, L_000001272f0fa140, v000001272f172280_0, C4<1>, C4<1>;
+L_000001272f0fa370 .functor OR 1, L_000001272f0f9f80, L_000001272f0fa290, C4<0>, C4<0>;
+L_000001272f173910 .functor AND 1, v000001272f1719c0_0, v000001272f172280_0, C4<1>, C4<1>;
+L_000001272f174320 .functor OR 1, L_000001272f0fa370, L_000001272f173910, C4<0>, C4<0>;
+v000001272f0fc060_0 .net *"_ivl_0", 0 0, L_000001272f0f9ea0;  1 drivers
+v000001272f0fb5c0_0 .net *"_ivl_10", 0 0, L_000001272f0fa290;  1 drivers
+v000001272f0fc2e0_0 .net *"_ivl_12", 0 0, L_000001272f0fa370;  1 drivers
+v000001272f0fbf20_0 .net *"_ivl_14", 0 0, L_000001272f173910;  1 drivers
+v000001272f0fb8e0_0 .net *"_ivl_4", 0 0, L_000001272f0fa0d0;  1 drivers
+v000001272f0fbde0_0 .net *"_ivl_6", 0 0, L_000001272f0f9f80;  1 drivers
+v000001272f0fbca0_0 .net *"_ivl_8", 0 0, L_000001272f0fa140;  1 drivers
+v000001272f0fbe80_0 .net "a", 0 0, v000001272f171b00_0;  alias, 1 drivers
+v000001272f0fc100_0 .net "b", 0 0, v000001272f1719c0_0;  alias, 1 drivers
+v000001272f0fc240_0 .net "bin", 0 0, v000001272f172280_0;  alias, 1 drivers
+v000001272f0fc380_0 .net "bout", 0 0, L_000001272f174320;  alias, 1 drivers
+v000001272f0fb480_0 .net "diff", 0 0, L_000001272f0fa300;  alias, 1 drivers
+S_000001272f111250 .scope module, "fs_struct" "full_subtractor_structural" 2 18, 5 2 0, S_000001272f103a40;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "bin";
+    .port_info 3 /OUTPUT 1 "diff";
+    .port_info 4 /OUTPUT 1 "bout";
+L_000001272f174470 .functor XOR 1, v000001272f171b00_0, v000001272f1719c0_0, C4<0>, C4<0>;
+L_000001272f173750 .functor XOR 1, L_000001272f174470, v000001272f172280_0, C4<0>, C4<0>;
+L_000001272f173d70 .functor AND 1, L_000001272f1745c0, v000001272f1719c0_0, C4<1>, C4<1>;
+L_000001272f1745c0 .functor NOT 1, v000001272f171b00_0, C4<0>, C4<0>, C4<0>;
+L_000001272f173d00 .functor AND 1, L_000001272f174400, v000001272f172280_0, C4<1>, C4<1>;
+L_000001272f174400 .functor NOT 1, v000001272f171b00_0, C4<0>, C4<0>, C4<0>;
+L_000001272f1742b0 .functor AND 1, v000001272f1719c0_0, v000001272f172280_0, C4<1>, C4<1>;
+L_000001272f173e50 .functor OR 1, L_000001272f173d70, L_000001272f173d00, L_000001272f1742b0, C4<0>;
+v000001272f0fb700_0 .net *"_ivl_0", 0 0, L_000001272f1745c0;  1 drivers
+v000001272f0fb840_0 .net *"_ivl_2", 0 0, L_000001272f174400;  1 drivers
+v000001272f0fbb60_0 .net "a", 0 0, v000001272f171b00_0;  alias, 1 drivers
+v000001272f0fbc00_0 .net "and1", 0 0, L_000001272f173d70;  1 drivers
+v000001272f0fbac0_0 .net "and2", 0 0, L_000001272f173d00;  1 drivers
+v000001272f0fb980_0 .net "and3", 0 0, L_000001272f1742b0;  1 drivers
+v000001272f0fba20_0 .net "b", 0 0, v000001272f1719c0_0;  alias, 1 drivers
+v000001272f1735e0_0 .net "bin", 0 0, v000001272f172280_0;  alias, 1 drivers
+v000001272f171ce0_0 .net "bout", 0 0, L_000001272f173e50;  alias, 1 drivers
+v000001272f172f00_0 .net "diff", 0 0, L_000001272f173750;  alias, 1 drivers
+v000001272f1721e0_0 .net "diff1", 0 0, L_000001272f174470;  1 drivers
+    .scope S_000001272f117b10;
+T_0 ;
+    %wait E_000001272f0fffc0;
+    %load/vec4 v000001272f0fb660_0;
+    %load/vec4 v000001272f0fb7a0_0;
+    %xor;
+    %load/vec4 v000001272f0fb520_0;
+    %xor;
+    %store/vec4 v000001272f0fbd40_0, 0, 1;
+    %load/vec4 v000001272f0fb660_0;
+    %inv;
+    %load/vec4 v000001272f0fb7a0_0;
+    %and;
+    %load/vec4 v000001272f0fb660_0;
+    %inv;
+    %load/vec4 v000001272f0fb520_0;
+    %and;
+    %or;
+    %load/vec4 v000001272f0fb7a0_0;
+    %load/vec4 v000001272f0fb520_0;
+    %and;
+    %or;
+    %store/vec4 v000001272f0fbfc0_0, 0, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_000001272f103a40;
+T_1 ;
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000001, S_000001272f103a40 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 27 "$display", "Test case 1:" {0 0 0};
+    %vpi_call 2 28 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 29 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 30 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 35 "$display", "Test case 2:" {0 0 0};
+    %vpi_call 2 36 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 37 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 38 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 43 "$display", "Test case 3:" {0 0 0};
+    %vpi_call 2 44 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 45 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 46 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 51 "$display", "Test case 4:" {0 0 0};
+    %vpi_call 2 52 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 53 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 54 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 59 "$display", "Test case 5:" {0 0 0};
+    %vpi_call 2 60 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 61 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 62 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 67 "$display", "Test case 6:" {0 0 0};
+    %vpi_call 2 68 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 69 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 70 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 75 "$display", "Test case 7:" {0 0 0};
+    %vpi_call 2 76 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 77 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 78 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f171b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f1719c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001272f172280_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 83 "$display", "Test case 8:" {0 0 0};
+    %vpi_call 2 84 "$display", "Behavioral - diff=%b, bout=%b", v000001272f1728c0_0, v000001272f171740_0 {0 0 0};
+    %vpi_call 2 85 "$display", "Dataflow - diff=%b, bout=%b", v000001272f172a00_0, v000001272f172dc0_0 {0 0 0};
+    %vpi_call 2 86 "$display", "Structural - diff=%b, bout=%b", v000001272f1717e0_0, v000001272f172500_0 {0 0 0};
+    %vpi_call 2 89 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "full_subtractor_test_bench.v";
+    "full_subtractor_behavioral.v";
+    "full_subtractor_dataflow.v";
+    "full_subtractor_structural.v";

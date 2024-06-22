@@ -1,0 +1,85 @@
+$date
+	Sat Jun 22 14:14:34 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module full_subtractor_test_bench $end
+$var wire 1 ! d3 $end
+$var wire 1 " d2 $end
+$var wire 1 # d1 $end
+$var wire 1 $ b3 $end
+$var wire 1 % b2 $end
+$var wire 1 & b1 $end
+$var reg 1 ' a $end
+$var reg 1 ( b $end
+$var reg 1 ) bin $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#10000
+1%
+1"
+1!
+1$
+1&
+1#
+1(
+#20000
+0%
+0$
+0&
+0(
+1'
+#30000
+0"
+0!
+0#
+1(
+#40000
+1%
+1$
+1"
+1!
+1&
+1#
+1)
+0(
+0'
+#50000
+0"
+0!
+0#
+1(
+#60000
+0%
+0$
+0&
+0(
+1'
+#70000
+1"
+1%
+1!
+1$
+1&
+1#
+1(
+#80000
